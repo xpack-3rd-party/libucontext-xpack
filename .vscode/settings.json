@@ -1,0 +1,32 @@
+{
+    "cSpell.ignoreWords": [
+        "Alti",
+        "Conill",
+        "DESTDIR",
+        "Ionescu",
+        "Liviu",
+        "Lwan",
+        "aarch",
+        "freestanding",
+        "gcompat",
+        "getcontext",
+        "libc",
+        "libucontext",
+        "loongarch",
+        "lucontext",
+        "makecontext",
+        "manpages",
+        "newlib",
+        "npmignore",
+        "npmjs",
+        "posix",
+        "postversion",
+        "riscv",
+        "scdoc",
+        "setcontext",
+        "swapcontext",
+        "ucontext",
+        "xpack",
+        "xpacks"
+    ]
+}

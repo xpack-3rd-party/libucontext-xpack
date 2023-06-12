@@ -1,3 +1,91 @@
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/xpack-3rd-party/libucontext-xpack)](https://github.com/xpack-3rd-party/libucontext-xpack/blob/xpack/package.json)
+[![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/xpack-3rd-party/libucontext-xpack)](https://github.com/xpack-3rd-party/libucontext-xpack/tags/)
+[![npm (scoped)](https://img.shields.io/npm/v/@xpack-3rd-party/libucontext.svg?color=blue)](https://www.npmjs.com/package/@xpack-3rd-party/libucontext/)
+[![license](https://img.shields.io/github/license/xpack-3rd-party/libucontext-xpack)](https://github.com/xpack-3rd-party/libucontext-xpack/blob/xpack/LICENSE)
+
+# An xpm/npm package which provides the `ucontext.h` C API
+
+This project provides a convenient way to integrate the
+[libucontext](https://github.com/kaniini/libucontext) library
+into the xpm/npm ecosystem, by allowing to install it as a package dependency.
+
+The open-source project is hosted on GitHub as
+[xpack-3rd-party/libucontext-xpack](https://github.com/xpack-3rd-party/libucontext-xpack).
+
+## Install
+
+This project is available from the `npmjs.com` registry as the package
+[`@xpack-3rd-party/libucontext`](https://www.npmjs.com/package/@xpack-3rd-party/libucontext),
+and the easiest way to add it to a project is via
+**xpm** or **npm**; it can also be used as any Git project, but for
+this better use the upstream project.
+
+### Prerequisites
+
+A recent [xpm](https://xpack.github.io/xpm/),
+which is a portable [Node.js](https://nodejs.org/) command line application.
+
+It is recommended to update to the latest version with:
+
+```sh
+npm install --global xpm@latest
+```
+
+For details please follow the instructions in the
+[xPack install](https://xpack.github.io/install/) page.
+
+### xpm
+
+To install this project as a dependency in xPack projects,
+use **xpm**:
+
+```sh
+cd my-project
+xpm init # Unless a package.json is already present
+
+xpm install @xpack-3rd-party/libucontext@latest
+
+ls -l xpacks/@xpack-3rd-party/libucontext
+```
+
+### npm
+
+To install the project as a dependency in **npm** projects:
+
+```sh
+cd my-project
+npm init # Unless a package.json is already present
+
+npm install @xpack-3rd-party/libucontext@latest --save-dev
+
+ls -l node_module/@xpack-3rd-party/libucontext
+```
+
+## Branches
+
+In addition to the original `main` branch, there are two
+xPack specific branches:
+
+- `xpack`, with the latest stable version (default)
+- `xpack-develop`, with the current development version
+
+All development is done in the `xpack-develop` branch, and contributions via
+Pull Requests should be directed to this branch.
+
+When new releases are published, the `xpack-develop` branch is merged
+into `xpack`.
+
+When there are new upstream releases:
+
+- upstream `master` is merged into the local `master`
+- the local `master` is merged into `xpack-develop`
+- the project is tested
+- `xpack-develop` is merged into `xpack`
+
+The original README follows.
+
+---
+
 # `libucontext`
 
 `libucontext` is a library which provides the `ucontext.h` C API.  Unlike other implementations,

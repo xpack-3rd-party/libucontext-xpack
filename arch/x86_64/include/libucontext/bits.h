@@ -3,6 +3,8 @@
 #ifndef LIBUCONTEXT_BITS_H
 #define LIBUCONTEXT_BITS_H
 
+// Linux defines an enum with these values.
+#if !defined(__USE_GNU)
 #define REG_R8		(0)
 #define REG_R9 		(1)
 #define REG_R10 	(2)
@@ -26,6 +28,7 @@
 #define REG_TRAPNO	(20)
 #define REG_OLDMASK	(21)
 #define REG_CR2		(22)
+#endif
 
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"

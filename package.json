@@ -1,6 +1,6 @@
 {
   "name": "@xpack-3rd-party/libucontext",
-  "version": "1.2.0-1.pre.3",
+  "version": "1.2.0-1.pre.4",
   "description": "A source code library which provides the `ucontext.h` C API",
   "main": "",
   "scripts": {

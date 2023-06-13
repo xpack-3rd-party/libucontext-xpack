@@ -45,6 +45,9 @@ add_library(xpack-3rd-party-libucontext-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # x86_64, aarch64, arm
 set(arch "${CMAKE_HOST_SYSTEM_PROCESSOR}")
+if ("${arch}" STREQUAL "arm64")
+  set(arch "aarch64")
+endif ()
 
 target_include_directories(xpack-3rd-party-libucontext-interface INTERFACE
   "include"

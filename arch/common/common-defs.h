@@ -1,5 +1,5 @@
-#ifndef __ARCH_COMMON_COMMON_DEFS_H
-#define __ARCH_COMMON_COMMON_DEFS_H
+#ifndef ARCH_COMMON_COMMON_DEFS_H_
+#define ARCH_COMMON_COMMON_DEFS_H_
 
 #ifndef SETUP_FRAME
 # define SETUP_FRAME(__proc)
@@ -18,8 +18,10 @@
 #endif
 
 #ifndef TYPE
-# ifdef __clang__
+# if defined (__APPLE__)
 #  define TYPE(__proc) // .type not supported
+// # elif defined (__clang__)
+// #  define TYPE(__proc) // .type not supported
 # else
 #  define TYPE(__proc)	.type	__proc, @function;
 #endif
@@ -33,15 +35,20 @@
 # endif
 #endif
 
-#define FUNC(__proc)					\
-	.global PROC_NAME(__proc);			\
-	.align  2;					\
+#define FUNC(__proc)				\
+	.global PROC_NAME(__proc);		\
+	.align  2;						\
 	TYPE(__proc)					\
-	ENT(__proc)					\
+	ENT(__proc)						\
 PROC_NAME(__proc):					\
 	SETUP_FRAME(__proc)
-#ifdef __clang__
-#define END(__proc)
+
+#if defined(__APPLE__)
+#define END(__proc) 				\
+	.end;							\
+	.size	__proc,.-__proc;
+// #elif defined(__clang__)
+// #define END(__proc)
 #else
 #define END(__proc)					\
 	.end	__proc;					\
@@ -49,7 +56,7 @@ PROC_NAME(__proc):					\
 #endif
 
 #ifdef EXPORT_UNPREFIXED
-#define ALIAS(__alias, __real)				\
+#define ALIAS(__alias, __real)		\
 	.weak	__alias;				\
 	__alias = __real;
 #else

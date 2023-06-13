@@ -14,6 +14,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wimplicit-function-declaration"
+#pragma clang diagnostic ignored "-Wextra-semi-stmt"
+#endif
+#pragma GCC diagnostic ignored "-Wmissing-prototypes"
+
 __attribute__ ((visibility ("hidden")))
 void
 libucontext_trampoline(void)
@@ -27,3 +34,5 @@ libucontext_trampoline(void)
 
 	libucontext_setcontext(uc_link);
 }
+
+#pragma GCC diagnostic pop

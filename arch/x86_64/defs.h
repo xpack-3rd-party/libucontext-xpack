@@ -1,5 +1,5 @@
-#ifndef __ARCH_X86_64_DEFS_H
-#define __ARCH_X86_64_DEFS_H
+#ifndef ARCH_X86_64_DEFS_H_
+#define ARCH_X86_64_DEFS_H_
 
 #ifndef REG_R8
 # define REG_R8		(0)
@@ -97,8 +97,13 @@
 
 #define REG_SZ		(8)
 
+#if defined(__GNUC__)
+#define FETCH_LINKPTR(dest) \
+	__asm__("movq (%%rbx), %0" : "=r" ((dest)));
+#else
 #define FETCH_LINKPTR(dest) \
 	asm("movq (%%rbx), %0" : "=r" ((dest)));
+#endif
 
 #include "common-defs.h"
 

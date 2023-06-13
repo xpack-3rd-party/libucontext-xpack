@@ -18,6 +18,8 @@
 #include "defs.h"
 #include <libucontext/libucontext.h>
 
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+
 extern void libucontext_trampoline(void);
 
 _Static_assert(offsetof(libucontext_ucontext_t, uc_mcontext.gregs) == MCONTEXT_GREGS, "MCONTEXT_GREGS is invalid");

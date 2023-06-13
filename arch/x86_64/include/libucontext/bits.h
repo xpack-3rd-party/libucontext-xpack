@@ -27,6 +27,17 @@
 #define REG_OLDMASK	(21)
 #define REG_CR2		(22)
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wpadded"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
+#pragma clang diagnostic ignored "-Wreserved-identifier"
+#elif defined(__GNUC__)
+#if defined(__cplusplus)
+#pragma GCC diagnostic ignored "-Wredundant-tags"
+#endif
+#endif
+
 typedef long long libucontext_greg_t, libucontext_gregset_t[23];
 
 typedef struct libucontext_fpstate {
@@ -60,5 +71,7 @@ typedef struct libucontext_ucontext {
 	libucontext_stack_t uc_stack;
 	libucontext_mcontext_t uc_mcontext;
 } libucontext_ucontext_t;
+
+#pragma GCC diagnostic pop
 
 #endif

@@ -1,5 +1,5 @@
-#ifndef __ARCH_AARCH64_DEFS_H
-#define __ARCH_AARCH64_DEFS_H
+#ifndef ARCH_AARCH64_DEFS_H_
+#define ARCH_AARCH64_DEFS_H_
 
 #define REG_SZ		(8)
 #define MCONTEXT_GREGS	(184)
@@ -19,8 +19,13 @@
 # define ESR_MAGIC	0x45535201
 #endif
 
+#if defined(__GNUC__)
+#define FETCH_LINKPTR(dest) \
+	__asm__("mov	%0, x19" : "=r" ((dest)))
+#else
 #define FETCH_LINKPTR(dest) \
 	asm("mov	%0, x19" : "=r" ((dest)))
+#endif
 
 #include "common-defs.h"
 

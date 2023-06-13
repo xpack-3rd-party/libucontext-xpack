@@ -18,6 +18,7 @@
 #include "defs.h"
 #include <libucontext/libucontext.h>
 
+#pragma GCC diagnostic ignored "-Wsign-conversion"
 
 extern void libucontext_trampoline(void);
 

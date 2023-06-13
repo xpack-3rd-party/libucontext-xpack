@@ -20,8 +20,8 @@
 #ifndef TYPE
 # if defined (__APPLE__)
 #  define TYPE(__proc) // .type not supported
-// # elif defined (__clang__)
-// #  define TYPE(__proc) // .type not supported
+# elif defined (__clang__)
+#  define TYPE(__proc) // .type not supported
 # else
 #  define TYPE(__proc)	.type	__proc, @function;
 #endif
@@ -47,8 +47,8 @@ PROC_NAME(__proc):					\
 #define END(__proc) 				\
 	.end;							\
 	.size	__proc,.-__proc;
-// #elif defined(__clang__)
-// #define END(__proc)
+#elif defined(__clang__)
+#define END(__proc)
 #else
 #define END(__proc)					\
 	.end	__proc;					\

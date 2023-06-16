@@ -1,6 +1,8 @@
 #ifndef LIBUCONTEXT_BITS_H
 #define LIBUCONTEXT_BITS_H
 
+#include <signal.h>
+
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
@@ -40,6 +42,7 @@ typedef struct libucontext_ucontext {
 	libucontext_stack_t uc_stack;
 	unsigned char __pad[136];
 	libucontext_mcontext_t uc_mcontext;
+	sigset_t uc_sigmask_posix;
 } libucontext_ucontext_t;
 
 #pragma GCC diagnostic pop

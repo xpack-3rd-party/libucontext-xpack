@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <signal.h>
 
 #ifndef LIBUCONTEXT_BITS_H
 #define LIBUCONTEXT_BITS_H
@@ -73,6 +74,7 @@ typedef struct libucontext_ucontext {
 	struct libucontext_ucontext *uc_link;
 	libucontext_stack_t uc_stack;
 	libucontext_mcontext_t uc_mcontext;
+	sigset_t uc_sigmask_posix;
 } libucontext_ucontext_t;
 
 #pragma GCC diagnostic pop

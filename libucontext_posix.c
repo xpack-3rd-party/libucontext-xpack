@@ -19,40 +19,40 @@
 # error libucontext_posix cannot be built in FREESTANDING mode.
 #endif
 
-#ifdef DEBUG
-# define TRACE(...)	fprintf(stderr, "TRACE: " __VA_ARGS__)
+#ifdef DEBUG_
+# define TRACE_(...)	fprintf(stderr, "TRACE: " __VA_ARGS__)
 #else
-# define TRACE(...)
+# define TRACE_(...)
 #endif
 
 int
-getcontext(libucontext_ucontext_t *ucp)
+libucontext_posix_getcontext(libucontext_ucontext_t *ucp)
 {
-	TRACE("getcontext(%p)\n", ucp);
+	TRACE_("getcontext(%p)\n", ucp);
 
-	if (sigprocmask(SIG_SETMASK, NULL, &ucp->uc_sigmask))
+	if (sigprocmask(SIG_SETMASK, NULL, &ucp->uc_sigmask_posix))
 		return -1;
 
 	return libucontext_getcontext(ucp);
 }
 
 int
-setcontext(const libucontext_ucontext_t *ucp)
+libucontext_posix_setcontext(const libucontext_ucontext_t *ucp)
 {
-	TRACE("setcontext(%p)\n", ucp);
+	TRACE_("setcontext(%p)\n", ucp);
 
-	if (sigprocmask(SIG_SETMASK, &ucp->uc_sigmask, NULL))
+	if (sigprocmask(SIG_SETMASK, &ucp->uc_sigmask_posix, NULL))
 		return -1;
 
 	return libucontext_setcontext(ucp);
 }
 
 int
-swapcontext(libucontext_ucontext_t *oucp, const libucontext_ucontext_t *ucp)
+libucontext_posix_swapcontext(libucontext_ucontext_t *oucp, const libucontext_ucontext_t *ucp)
 {
-	TRACE("swapcontext(%p, %p)\n", oucp, ucp);
+	TRACE_("swapcontext(%p, %p)\n", oucp, ucp);
 
-	if (sigprocmask(SIG_SETMASK, &ucp->uc_sigmask, &oucp->uc_sigmask))
+	if (sigprocmask(SIG_SETMASK, &ucp->uc_sigmask_posix, &oucp->uc_sigmask_posix))
 		return -1;
 
 	return libucontext_swapcontext(oucp, ucp);

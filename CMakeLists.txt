@@ -61,6 +61,7 @@ target_sources(xpack-3rd-party-libucontext-interface INTERFACE
   "arch/${arch}/setcontext.S"
   "arch/${arch}/swapcontext.S"
   "arch/${arch}/trampoline.c"
+  "libucontext_posix.c"
 )
 
 target_compile_definitions(xpack-3rd-party-libucontext-interface INTERFACE

@@ -24,6 +24,10 @@ void libucontext_makecontext(libucontext_ucontext_t *, void (*)(), int, ...);
 int  libucontext_setcontext(const libucontext_ucontext_t *);
 int  libucontext_swapcontext(libucontext_ucontext_t *, const libucontext_ucontext_t *);
 
+int  libucontext_posix_getcontext(libucontext_ucontext_t *);
+int  libucontext_posix_setcontext(const libucontext_ucontext_t *);
+int  libucontext_posix_swapcontext(libucontext_ucontext_t *, const libucontext_ucontext_t *);
+
 #ifdef __cplusplus
 }
 #endif

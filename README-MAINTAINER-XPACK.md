@@ -57,7 +57,7 @@ No need to add a tag here, it'll be added when the release is created.
 
 Determine the upstream version (like `1.2.0`)
 
-- <https://github.com/jothepro/libucontext/releases>
+- <https://github.com/kaniini/libucontext>
 
 Update the`package.json` file; add an extra digit in the
 pre-release field, and initially also add `.pre`,

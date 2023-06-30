@@ -14,11 +14,10 @@ The open-source project is hosted on GitHub as
 
 ## Install
 
-This project is available from the `npmjs.com` registry as the package
-[`@xpack-3rd-party/libucontext`](https://www.npmjs.com/package/@xpack-3rd-party/libucontext),
-and the easiest way to add it to a project is via
-**xpm** or **npm**; it can also be used as any Git project, but for
-this better use the upstream project.
+As a source code library xpm/npm package,
+the easiest way to add it to a project is via
+**xpm** or **npm**, but it can also be used as any Git project,
+for example as a submodule.
 
 ### Prerequisites
 

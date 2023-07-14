@@ -53,7 +53,7 @@ npm install --global xpm@latest
 For details please follow the instructions in the
 [xPack install](https://xpack.github.io/install/) page.
 
-Note: Be sure **xpm** is not installed with administrative rights.
+Warning: Be sure **xpm** is not installed with administrative rights.
 
 #### xpm
 

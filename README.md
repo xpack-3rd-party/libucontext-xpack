@@ -64,7 +64,7 @@ This project can be installed as a package from GitHub with:
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install github:xpack-3rd-party/libucontext-xpack --save-dev --copy
+xpm install github:xpack-3rd-party/libucontext-xpack#v1.2.0-1 --save-dev --copy
 
 ls -l xpacks/@xpack-3rd-party/libucontext
 ```

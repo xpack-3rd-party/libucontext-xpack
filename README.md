@@ -12,19 +12,33 @@ into the xpm/npm ecosystem, by allowing to install it as a package dependency.
 The open-source project is hosted on GitHub as
 [xpack-3rd-party/libucontext-xpack](https://github.com/xpack-3rd-party/libucontext-xpack).
 
+## Maintainer info
+
+This page is addressed to developers who plan to include this source
+library into their own projects.
+
+For maintainer info, please see the
+[README-MAINTAINER-XPACK](README-MAINTAINER-XPACK.md) file.
+
 ## Install
 
-As a source code library xpm/npm package,
-the easiest way to add it to a project is via
-**xpm** or **npm**, but it can also be used as any Git project,
-for example as a submodule.
+As a source code library, this project can be integrated into another project
+in the traditional way,
+by either copying the relevant files into the target project, or by linking
+the entire project as a Git submodule.
 
-### Prerequisites
+However, things can be further automated and the most convenient way is
+to **add it as a dependency** to the project via **xpm**.
+
+#### Prerequisites
 
 A recent [xpm](https://xpack.github.io/xpm/),
-which is a portable [Node.js](https://nodejs.org/) command line application.
+which is a portable [Node.js](https://nodejs.org/) command line application
+that complements [npm](https://docs.npmjs.com)
+with several extra features specific to
+**C/C++ projects**.
 
-It is recommended to update to the latest version with:
+It is recommended to install/update to the latest version with:
 
 ```sh
 npm install --global xpm@latest
@@ -33,31 +47,45 @@ npm install --global xpm@latest
 For details please follow the instructions in the
 [xPack install](https://xpack.github.io/install/) page.
 
-### xpm
+@warning
+Be sure **xpm** is not installed with administrative rights.
 
-To install this project as a dependency in xPack projects,
-use **xpm**:
+#### xpm
+
+This project can be installed as a package from GitHub with:
 
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
 
-xpm install @xpack-3rd-party/libucontext@latest
+xpm install github:xpack-3rd-party/libucontext-xpack
 
 ls -l xpacks/@xpack-3rd-party/libucontext
 ```
 
-### npm
+#### npm
 
-To install the project as a dependency in **npm** projects:
+The package can also be installed with [npm](https://docs.npmjs.com)
+or related, but
+the features specific to C/C++ projects will not be available;
+therefore, at least for consistency reasons, it is recommended
+to use **xpm**.
+
+### Add as Git submodule
+
+Besides manually copying the relevant files to the target
+project, which will later require extra maintenance efforts to keep the
+project up to date, a more convenient
+solution is to link the entire project as a **Git submodule**,
+for example below an `xpacks` folder:
 
 ```sh
 cd my-project
-npm init # Unless a package.json is already present
+git init # Unless already a Git project
+mkdir -p xpacks
 
-npm install @xpack-3rd-party/libucontext@latest --save-dev
-
-ls -l node_module/@xpack-3rd-party/libucontext
+git submodule add https://github.com/xpack-3rd-party/libucontext-xpack.git \
+  xpacks/@xpack-3rd-party/libucontext
 ```
 
 ## Branches

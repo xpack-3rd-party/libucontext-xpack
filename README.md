@@ -30,6 +30,12 @@ the entire project as a Git submodule.
 However, things can be further automated and the most convenient way is
 to **add it as a dependency** to the project via **xpm**.
 
+### Install with xpm/npm
+
+Along with the source files, this project also includes a
+`package.json` file with the metadata that allows it to be identified as an
+**xpm/npm** package so that it can be directly installed from GitHub.
+
 #### Prerequisites
 
 A recent [xpm](https://xpack.github.io/xpm/),

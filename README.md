@@ -3,7 +3,7 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@xpack-3rd-party/libucontext.svg?color=blue)](https://www.npmjs.com/package/@xpack-3rd-party/libucontext/)
 [![license](https://img.shields.io/github/license/xpack-3rd-party/libucontext-xpack)](https://github.com/xpack-3rd-party/libucontext-xpack/blob/xpack/LICENSE)
 
-# An xpm/npm package which provides the `ucontext.h` C API
+# An xpm/npm package with an implementation of the `ucontext.h` C API
 
 This project provides a convenient way to integrate the
 [libucontext](https://github.com/kaniini/libucontext) library
@@ -95,7 +95,7 @@ git submodule add https://github.com/xpack-3rd-party/libucontext-xpack.git \
 
 ## Branches
 
-In addition to the original `main` branch, there are two
+In addition to the original `master` branch, there are two
 xPack specific branches:
 
 - `xpack`, with the latest stable version (default)
@@ -113,6 +113,95 @@ When there are new upstream releases:
 - the local `master` is merged into `xpack-develop`
 - the project is tested
 - `xpack-develop` is merged into `xpack`
+
+## Developer info
+
+### Overview
+
+The current content is from upstream, with the xPack metadata added.
+
+### Status
+
+The **xpack-3rd-party/libucontext** source library is fully functional.
+
+### Build & integration info
+
+To ease the integration of this package into user projects, there
+are already made CMake configuration files (see below).
+
+For other build systems, consider the following details:
+
+#### Include folders
+
+The following folders should be passed to the compiler during the build:
+
+- `include`
+- `arch/${arch}/include`
+- `arch/common`
+
+#### Source files
+
+- `arch/${arch}/getcontext.S`
+- `arch/${arch}/makecontext.c`
+- `arch/${arch}/setcontext.S`
+- `arch/${arch}/swapcontext.S`
+- `arch/${arch}/trampoline.c`
+- `libucontext_posix.c`
+
+#### Preprocessor definitions
+
+- `_XOPEN_SOURCE=700L`
+
+#### Compiler options
+
+- none
+
+#### Dependencies
+
+- none
+
+#### CMake
+
+To integrate the **libucontext** source library
+into a CMake application,
+add this folder to the build:
+
+```cmake
+add_subdirectory("xpacks/@xpack-3rd-party/libucontext")`
+```
+
+The result is an interface library that can be added as an application
+dependency with:
+
+```cmake
+target_link_libraries(your-target PRIVATE
+
+  xpack-3rd-party::libucontext
+)
+```
+
+### Examples
+
+- none
+
+### Known problems
+
+- none
+
+### Limitations
+
+- none
+
+### Tests
+
+- none
+
+## License
+
+The xPack specific content is released under the
+[MIT License](https://opensource.org/licenses/mit/),
+with all rights reserved to
+[Liviu Ionescu](https://github.com/ilg-ul).
 
 The original README follows.
 

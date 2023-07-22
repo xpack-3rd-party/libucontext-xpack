@@ -34,7 +34,7 @@ to **add it as a dependency** to the project via **xpm**.
 
 Along with the source files, this project also includes a
 `package.json` file with the metadata that allows it to be identified as an
-**xpm/npm** package so that it can be directly installed from GitHub.
+**xpm/npm** package that can be installed automatically as a dependency.
 
 #### Prerequisites
 
@@ -57,7 +57,7 @@ Warning: Be sure **xpm** is not installed with administrative/root rights.
 
 #### xpm
 
-This source code library can be installed as a sub-folder of `xpacks` with:
+This source code library can be installed as a sub-folder below `xpacks` with:
 
 ```sh
 cd my-project
@@ -67,6 +67,8 @@ xpm install github:xpack-3rd-party/libucontext-xpack#v1.2.0-1 --save-dev --copy
 
 ls -l xpacks/@xpack-3rd-party/libucontext
 ```
+
+Note: On Windows use `dir` and back-slashes.
 
 #### npm
 

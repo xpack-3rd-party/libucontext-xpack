@@ -20,6 +20,10 @@
 #include "defs.h"
 #include <libucontext/libucontext.h>
 
+#pragma GCC diagnostic ignored "-Wsign-conversion"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#endif
 
 extern void libucontext_trampoline(void);
 

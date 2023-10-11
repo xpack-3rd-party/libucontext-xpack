@@ -99,7 +99,7 @@ related to the new version.
 - push the `xpack-develop` branch to GitHub
 - the `postversion` npm script should also update tags via `git push origin --tags`
 
-### Publish
+### Publish (not yet)
 
 - `npm publish --tag next` (use `npm publish --access public` when
   publishing for the first time)

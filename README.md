@@ -63,7 +63,7 @@ This source code library can be installed as a sub-folder below `xpacks` with:
 cd my-project
 xpm init # Add a package.json if not already present
 
-xpm install github:xpack-3rd-party/libucontext-xpack#v1.2.0-2 --save-dev --copy
+xpm install github:xpack-3rd-party/libucontext-xpack#v1.2.0-3 --save-dev --copy
 
 ls -l xpacks/@xpack-3rd-party/libucontext
 ```

@@ -8,7 +8,11 @@ and close existing issues and pull requests.
 
 ## 2023-10-11
 
-* v1.2.0-2
+* v1.2.0-3
+* e2b8151 silence warnings for arm
+* 83b70b0 README update
+* 4fd8c13 1.2.0-2
+* 82bc4f5 prepare v1.2.0-2
 * a21bb96 silence warnings
 
 ## 2023-07-22

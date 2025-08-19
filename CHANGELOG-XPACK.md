@@ -6,9 +6,16 @@ Please check
 [GitHub](https://github.com/xpack-3rd-party/libucontext-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2025-08-19
+
+* v1.2.0-4
+* 6d11ff3 package.json add xpm link action
+* 4202cfc silence clang -Wpre-c11-compat
+
 ## 2023-10-11
 
-* v1.2.0-3
+* ad67eb0 1.2.0-3
+* 69b796a prepare v1.2.0-3
 * e2b8151 silence warnings for arm
 * 83b70b0 README update
 * 4fd8c13 1.2.0-2

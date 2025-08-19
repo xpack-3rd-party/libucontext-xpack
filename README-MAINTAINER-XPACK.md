@@ -22,13 +22,13 @@ git clone \
   ~/Work/xpack-3rd-party/libucontext-xpack.git
 ```
 
-For development purposes, clone the `xpack-develop` branch:
+For development purposes, clone the `xpack-development` branch:
 
 ```sh
 rm -rf ~/Work/xpack-3rd-party/libucontext-xpack.git && \
 mkdir -p ~/Work/xpack-3rd-party && \
 git clone \
-  --branch xpack-develop \
+  --branch xpack-development \
   https://github.com/xpack-3rd-party/libucontext-xpack.git \
   ~/Work/xpack-3rd-party/libucontext-xpack.git
 ```
@@ -48,7 +48,7 @@ There are no fixed releases, the project aims to follow the upstream releases.
 
 In the `xpack-3rd-party/libucontext-xpack` Git repo:
 
-- switch to the `xpack-develop` branch
+- switch to the `xpack-development` branch
 - if needed, merge the `xpack` branch
 
 No need to add a tag here, it'll be added when the release is created.
@@ -89,14 +89,14 @@ related to the new version.
 
 ### Publish on the npmjs.com server
 
-- select the `xpack-develop` branch
+- select the `xpack-development` branch
 - commit all changes
 - `npm pack` and check the content of the archive, which should list
   only `package.json`, `README.md`, `LICENSE`, `CHANGELOG-XPACK.md`,
   the `doxygen-awesome-*.js` and `doxygen-custom/*` files;
   possibly adjust `.npmignore`
 - `npm version 1.2.0-4`
-- push the `xpack-develop` branch to GitHub
+- push the `xpack-development` branch to GitHub
 - the `postversion` npm script should also update tags via `git push origin --tags`
 
 ### Publish (not yet)
@@ -113,9 +113,9 @@ The version is visible at:
 When the package is considered stable:
 
 - with a Git client (VS Code is fine)
-- merge `xpack-develop` into `xpack`
+- merge `xpack-development` into `xpack`
 - push to GitHub
-- select `xpack-develop`
+- select `xpack-development`
 
 ### Tag the npm package as `latest`
 

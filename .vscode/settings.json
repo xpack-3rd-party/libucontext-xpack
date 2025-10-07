@@ -28,5 +28,6 @@
         "ucontext",
         "xpack",
         "xpacks"
-    ]
+    ],
+    "makefile.configureOnOpen": false
 }

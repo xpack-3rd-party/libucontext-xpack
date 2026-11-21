@@ -49,7 +49,7 @@ There are no fixed releases, the project aims to follow the upstream releases.
 In the `xpack-3rd-party/libucontext-xpack` Git repo:
 
 - switch to the `xpack-development` branch
-- if needed, merge the `xpack` branch
+- if necessary, rebase `xpack-development` on top of the `xpack` branch
 
 No need to add a tag here, it'll be added when the release is created.
 
@@ -101,7 +101,7 @@ related to the new version.
 
 ### Publish (not yet)
 
-- `npm publish --tag next` (use `npm publish --access public` when
+- `npm publish --tag test` (use `npm publish --access public` when
   publishing for the first time)
 
 The version is visible at:
@@ -113,7 +113,7 @@ The version is visible at:
 When the package is considered stable:
 
 - with a Git client (VS Code is fine)
-- merge `xpack-development` into `xpack`
+- rebase `xpack` on top of `xpack-development`
 - push to GitHub
 - select `xpack-development`
 

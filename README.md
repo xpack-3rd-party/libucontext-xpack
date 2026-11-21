@@ -203,7 +203,7 @@ target_link_libraries(your-target PRIVATE
 ## License
 
 The xPack specific content is released under the
-[MIT License](https://opensource.org/licenses/mit/),
+[MIT License](https://opensource.org/licenses/mit),
 with all rights reserved to
 [Liviu Ionescu](https://github.com/ilg-ul).
 

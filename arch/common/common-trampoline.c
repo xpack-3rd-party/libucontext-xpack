@@ -14,12 +14,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wimplicit-function-declaration"
 #pragma clang diagnostic ignored "-Wextra-semi-stmt"
 #endif
 #pragma GCC diagnostic ignored "-Wmissing-prototypes"
+#endif // defined(__GNUC__)
 
 __attribute__ ((visibility ("hidden")))
 void
@@ -35,4 +40,9 @@ libucontext_trampoline(void)
 	libucontext_setcontext(uc_link);
 }
 
+
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
+
+// ----------------------------------------------------------------------------

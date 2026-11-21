@@ -3,7 +3,9 @@
 
 #include <signal.h>
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Wpadded"
 #if defined(__clang__)
 // #pragma clang diagnostic ignored "-Wc++98-compat-pedantic"
@@ -13,6 +15,7 @@
 #pragma GCC diagnostic ignored "-Wredundant-tags"
 #endif
 #endif
+#endif // defined(__GNUC__)
 
 typedef unsigned long libucontext_greg_t;
 typedef unsigned long libucontext_gregset_t[34];
@@ -45,6 +48,8 @@ typedef struct libucontext_ucontext {
 	sigset_t uc_sigmask_posix;
 } libucontext_ucontext_t;
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
-#endif
+#endif // LIBUCONTEXT_BITS_H

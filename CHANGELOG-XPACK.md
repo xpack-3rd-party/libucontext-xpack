@@ -6,9 +6,15 @@ Please check
 [GitHub](https://github.com/xpack-3rd-party/libucontext-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-11-28
+
+* v1.2.0-7
+* e7ea625 makecontext.c: guard -Wpre-c11-compat for Apple clang
+
 ## 2026-11-27
 
-* v1.2.0-6
+* a8a37ab 1.2.0-6
+* afbf516 prepare v1.2.0-6
 * 6913682 makecontext.c: guard -Wpre-c11-compat with clang 19
 
 ## 2026-11-21

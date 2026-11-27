@@ -6,9 +6,38 @@ Please check
 [GitHub](https://github.com/xpack-3rd-party/libucontext-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-11-27
+
+* v1.2.0-6
+* 6913682 makecontext.c: guard -Wpre-c11-compat with clang 19
+
+## 2026-11-21
+
+* 1edf7bd RAEDMEs update
+* dddfd88 empty claude.md
+* d890357 cmake copyright cosmetics
+* 4d92e8a add #if defined(__GNUC__)
+
+## 2026-09-07
+
+* ace5052 cosmetics xpm packages
+
+## 2026-06-06
+
+* e05e721 copyright update 2026
+
+## 2025-11-20
+
+* be50a6d rename npm-pack
+
+## 2025-10-07
+
+* 7fecfbe update copyright notices
+
 ## 2025-08-20
 
-* v1.2.0-5
+* 402899f 1.2.0-5
+* e7d4fbc prepare v1.2.0-5
 * e30a5ee silence clang -Wpre-c11-compat for arm64
 
 ## 2025-08-19

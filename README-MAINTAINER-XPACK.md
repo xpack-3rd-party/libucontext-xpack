@@ -61,7 +61,7 @@ Determine the upstream version (like `1.2.0`)
 
 Update the`package.json` file; add an extra digit in the
 pre-release field, and initially also add `.pre`,
-for example `1.2.0-5.pre`.
+for example `1.2.0-6.pre`.
 
 ### Fix possible open issues
 
@@ -69,7 +69,7 @@ Check GitHub issues and pull requests:
 
 - <https://github.com/xpack-3rd-party/libucontext-xpack/issues/>
 
-and fix them; assign them to a milestone (like `1.2.0-5`).
+and fix them; assign them to a milestone (like `1.2.0-6`).
 
 ### Update `README-MAINTAINER-XPACK.md`
 
@@ -80,8 +80,8 @@ related to the new version.
 
 - open the `CHANGELOG-XPACK.md` file
 - check if all previous fixed issues are in
-- add a new entry like _* v1.2.0-5_
-- commit with a message like _prepare v1.2.0-5_
+- add a new entry like _\* v1.2.0-6_
+- commit with a message like _prepare v1.2.0-6_
 
 ### Push changes
 
@@ -95,18 +95,9 @@ related to the new version.
   only `package.json`, `README.md`, `LICENSE`, `CHANGELOG-XPACK.md`,
   the `doxygen-awesome-*.js` and `doxygen-custom/*` files;
   possibly adjust `.npmignore`
-- `npm version 1.2.0-5`
+- `npm version 1.2.0-6`
 - push the `xpack-development` branch to GitHub
 - the `postversion` npm script should also update tags via `git push origin --tags`
-
-### Publish (not yet)
-
-- `npm publish --tag test` (use `npm publish --access public` when
-  publishing for the first time)
-
-The version is visible at:
-
-- <https://www.npmjs.com/package/@xpack-3rd-party/libucontext?activeTab=versions>
 
 ### Update the repo
 
@@ -122,5 +113,5 @@ When the package is considered stable:
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-3rd-party/libucontext`
-- `npm dist-tag add @xpack-3rd-party/libucontext@1.2.0-5 latest`
+- `npm dist-tag add @xpack-3rd-party/libucontext@1.2.0-6 latest`
 - `npm dist-tag ls @xpack-3rd-party/libucontext`

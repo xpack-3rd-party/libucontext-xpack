@@ -21,7 +21,9 @@
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
+#if (__clang_major__ >= 19)
 #pragma clang diagnostic ignored "-Wpre-c11-compat"
+#endif // (__clang_major__ >= 19)
 #endif
 
 extern void libucontext_trampoline(void);

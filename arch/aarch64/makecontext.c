@@ -21,9 +21,11 @@
 #pragma GCC diagnostic ignored "-Wsign-conversion"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage"
-#if (__clang_major__ >= 19)
+// Apple clang 17 is based on LLVM 19, but reports its own version.
+#if (defined(__apple_build_version__) && (__clang_major__ >= 17)) \
+    || (!defined(__apple_build_version__) && (__clang_major__ >= 19))
 #pragma clang diagnostic ignored "-Wpre-c11-compat"
-#endif // (__clang_major__ >= 19)
+#endif // Apple clang >= 17 or clang >= 19
 #endif
 
 extern void libucontext_trampoline(void);
